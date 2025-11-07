@@ -1,17 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:pra_login/models/user_model.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class splashScreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  State<splashScreen> createState() => _splashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _splashScreenState extends State<splashScreen> {
-  static const keyLogin = 'login';
+class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {

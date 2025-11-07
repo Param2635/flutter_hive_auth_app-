@@ -24,7 +24,7 @@ void main() async{
 
 class MyApp extends StatelessWidget {
   final bool isLoggedIn;
-  const MyApp({required this.isLoggedIn});
+  const MyApp({super.key, required this.isLoggedIn});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
 
       debugShowCheckedModeBanner: false,
       title: 'Authentication',
-      home: splashScreen(),
+      home: SplashScreen(),
       routes: {
         'login': (context) => MyLogin(),
         'register': (context) => MyRegister(),
