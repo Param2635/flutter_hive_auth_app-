@@ -23,11 +23,13 @@ class _MyLoginState extends State<MyLogin> {
     final password = passwordController.text.trim();
     final user = box.get(email);
 
-    if(user != null && user.password == password){
+    if (user != null && user.password == password) {
       currentUserBox.put('current_user', email);
-      Navigator.pushReplacementNamed(context, 'home',);
-    }else{
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Invalid email or password')));
+      Navigator.pushReplacementNamed(context, 'home');
+    } else {
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('Invalid email or password')));
     }
   }
 
@@ -89,27 +91,18 @@ class _MyLoginState extends State<MyLogin> {
                       ),
                       onPressed: () {
                         setState(() {
-                            obscureText = !obscureText;
-                          }
-                        );
+                          obscureText = !obscureText;
+                        });
                       },
                     ),
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ElevatedButton(onPressed: loginUser,child: Text('Login'),),),
-              SizedBox(height: 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
+
                 children: [
-                  TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, 'resetPass');
-                    },
-                    child: Text('Password Forget'),
-                  ),
+                  ElevatedButton(onPressed: loginUser, child: Text('Login')),
                   ElevatedButton(
                     onPressed: () {
                       Navigator.pushReplacementNamed(context, 'register');

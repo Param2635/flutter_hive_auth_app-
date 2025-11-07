@@ -28,12 +28,7 @@ class _MyHomeState extends State<MyHome> {
     return Scaffold(
       backgroundColor: Colors.blue.shade100,
       appBar: AppBar(
-        title: Row(
-          children: [
-            Text('Home', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),),
-            IconButton(onPressed: (){Navigator.pushReplacementNamed(context, 'settings');}, icon: Icon(Icons.settings))
-          ],
-        ),
+        title: Text('Home', style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),),
         backgroundColor: Colors.blue.shade700,
       ),
       body: Center(

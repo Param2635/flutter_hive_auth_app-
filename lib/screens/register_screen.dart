@@ -19,7 +19,7 @@ class _MyRegisterState extends State<MyRegister> {
   bool obscureText = true;
   String _errorMessage = '';
 
-  void RegisterUser() async{
+  void registerUser() async{
     if (formKey.currentState!.validate()) {
       var box = Hive.box<User>('usersBox');
       final newEmail = emailController.text.trim();
@@ -39,7 +39,7 @@ class _MyRegisterState extends State<MyRegister> {
     );
 
     box.put(newEmail, newUser);
-    print(newUser);
+    // print(newUser);
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
         content: Text('Registration successful!'),
@@ -182,7 +182,7 @@ class _MyRegisterState extends State<MyRegister> {
                       ),
                     ),
                     ElevatedButton(
-                      onPressed: RegisterUser, child: Text('Sign In'),
+                      onPressed: registerUser, child: Text('Sign In'),
                     ),
                   ],
                 ),
